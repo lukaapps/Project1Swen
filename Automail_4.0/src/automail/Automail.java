@@ -1,5 +1,5 @@
 package automail;
-
+/**test*/
 import simulation.IMailDelivery;
 
 public class Automail {
