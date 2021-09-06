@@ -6,6 +6,8 @@ import java.util.ListIterator;
 
 import exceptions.ItemTooHeavyException;
 
+import javax.swing.*;
+
 /**
  * addToPool is called when there are mail items newly arrived at the building to add to the MailPool or
  * if a robot returns with some undelivered items - these are added back to the MailPool.
@@ -32,6 +34,12 @@ public class MailPool {
 		pool.add(item);
 		pool.sort(new ItemComparator());
 	}
+
+	/**
+	 * pops item from mail pool
+	 *
+	 * **/
+
 
 	/**
      * load up any waiting robots with mailItems, if any.

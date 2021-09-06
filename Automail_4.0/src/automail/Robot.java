@@ -1,9 +1,12 @@
 package automail;
 
+import exceptions.DoesNotHaveTubeException;
 import exceptions.ExcessiveDeliveryException;
 import exceptions.ItemTooHeavyException;
 import simulation.Clock;
 import simulation.IMailDelivery;
+
+import java.util.LinkedList;
 
 /**
  * The robot delivers mail!
@@ -11,6 +14,7 @@ import simulation.IMailDelivery;
 public class Robot {
 
     private static final int INDIVIDUAL_MAX_WEIGHT = 2000;
+    private final String type;
 
     private IMailDelivery delivery;
     private final String id;
@@ -23,8 +27,8 @@ public class Robot {
     private boolean receivedDispatch;
 
     private MailItem deliveryItem = null;
-    private MailItem tube = null;
-
+    //private MailItem tube = null;
+    private LinkedList<MailItem> tube = new LinkedList<MailItem>();
     private int deliveryCounter;
     
 
@@ -33,16 +37,19 @@ public class Robot {
      * also set it to be waiting for mail.
      * @param delivery governs the final delivery
      * @param mailPool is the source of mail items
+     * @param type is the type of robot that is being used
      */
-    public Robot(IMailDelivery delivery, MailPool mailPool, int number){
-    	this.id = "R" + number;
+    public Robot(IMailDelivery delivery, MailPool mailPool, int number, String type){
+    	this.id = type + number; //Change later "R" value - will be determinate on the type
         // current_state = RobotState.WAITING;
     	current_state = RobotState.RETURNING;
         current_floor = Building.getInstance().getMailroomLocationFloor();
+        this.type = type;
         this.delivery = delivery;
         this.mailPool = mailPool;
         this.receivedDispatch = false;
         this.deliveryCounter = 0;
+
     }
     
     /**
@@ -85,17 +92,16 @@ public class Robot {
                     delivery.deliver(this, deliveryItem, "");
                     deliveryItem = null;
                     deliveryCounter++;
-                    if(deliveryCounter > 2){  // Implies a simulation bug
+                    if(deliveryCounter > 2){  // Implies a simulation bug - Modify based off type robot
                     	throw new ExcessiveDeliveryException();
                     }
                     /** Check if want to return, i.e. if there is no item in the tube*/
-                    if(tube == null){
+                    if(tube.size() == 0){
                     	changeState(RobotState.RETURNING);
                     }
                     else{
                         /** If there is another item, set the robot's route to the location to deliver the item */
-                        deliveryItem = tube;
-                        tube = null;
+                        deliveryItem = tube.pop();
                         setDestination();
                         changeState(RobotState.DELIVERING);
                     }
@@ -120,6 +126,7 @@ public class Robot {
      * @param destination the floor towards which the robot is moving
      */
     private void moveTowards(int destination) {
+
         if(current_floor < destination){
             current_floor++;
         } else {
@@ -128,7 +135,7 @@ public class Robot {
     }
     
     public String getIdTube() {
-    	return String.format("%s(%1d)", this.id, (tube == null ? 0 : 1));
+    	return String.format("%s(%1d)", this.id, (tube.size() == 0 ? 0 : 1));
     }
     
     /**
@@ -146,7 +153,7 @@ public class Robot {
     	}
     }
 
-	public MailItem getTube() {
+	public LinkedList<MailItem> getTube() {
 		return tube;
 	}
 
@@ -161,9 +168,17 @@ public class Robot {
 	}
 
 	public void addToTube(MailItem mailItem) throws ItemTooHeavyException {
-		assert(tube == null);
-		tube = mailItem;
-		if (tube.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
+        switch(type){
+            case "R":
+                assert(tube.size() == 0);
+            case "B":
+                assert(tube.size() < 3);
+            case "F":
+                addToHand(mailItem);
+        }
+        tube.add(mailItem);
+		if (mailItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
+        // tube will have to be sum of all mailITemList
 	}
 
 }
