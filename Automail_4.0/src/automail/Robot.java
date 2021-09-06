@@ -28,7 +28,7 @@ public class Robot {
 
     private MailItem deliveryItem = null;
     //private MailItem tube = null;
-    private LinkedList<MailItem> tube = new LinkedList<MailItem>();
+    private LinkedList<MailItem> tube = new LinkedList<>();
     private int deliveryCounter;
     
 
@@ -101,7 +101,9 @@ public class Robot {
                     }
                     else{
                         /** If there is another item, set the robot's route to the location to deliver the item */
-                        deliveryItem = tube.pop();
+                        deliveryItem = tube.getFirst();
+                        tube.removeFirst();
+                        System.out.printf("%d here", tube.size());
                         setDestination();
                         changeState(RobotState.DELIVERING);
                     }
@@ -176,7 +178,7 @@ public class Robot {
             case "F":
                 addToHand(mailItem);
         }
-        tube.add(mailItem);
+        tube.addLast(mailItem);
 		if (mailItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
         // tube will have to be sum of all mailITemList
 	}

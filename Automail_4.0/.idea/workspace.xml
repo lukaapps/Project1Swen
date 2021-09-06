@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d515468-12c8-4353-9e70-b33f6a30c8f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/automail/BulkRobot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/automail/FastRobot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/automail/NormalRobot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/DoesNotHaveTubeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/Automail.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Automail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/MailPool$Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool$Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/MailPool$ItemComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool$ItemComparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/MailPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/Robot$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Robot$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/Robot$RobotState.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Robot$RobotState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/util/Configuration.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/util/Configuration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automail/Automail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Automail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automail/MailPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/MailPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automail/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Configuration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +95,7 @@
       <workItem from="1630304957347" duration="4892000" />
       <workItem from="1630448129954" duration="26000" />
       <workItem from="1630886834914" duration="640000" />
-      <workItem from="1630887507924" duration="14853000" />
+      <workItem from="1630887507924" duration="18299000" />
     </task>
     <servers />
   </component>
@@ -126,30 +112,34 @@
     </state>
     <state x="518" y="232" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.1440.816@0.25.1440.816" timestamp="1630887286904" />
     <state x="375" y="-788" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.1440.817/-545.-1055.2560.1055@-545.-1055.2560.1055" timestamp="1630304038523" />
-    <state width="2560" height="137" key="GridCell.Tab.0.bottom" timestamp="1630911845407">
+    <state width="2560" height="137" key="GridCell.Tab.0.bottom" timestamp="1630920321687">
       <screen x="-545" y="-1080" width="2560" height="1080" />
     </state>
-    <state width="2560" height="137" key="GridCell.Tab.0.bottom/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630911845407" />
+    <state width="2560" height="137" key="GridCell.Tab.0.bottom/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630920321687" />
     <state width="1280" height="294" key="GridCell.Tab.0.bottom/0.25.1440.816/-545.-1055.2560.1055@0.25.1440.816" timestamp="1630368471435" />
     <state width="640" height="215" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1630889138236" />
-    <state width="2560" height="137" key="GridCell.Tab.0.center" timestamp="1630911845405">
+    <state width="2560" height="137" key="GridCell.Tab.0.bottom/0.25.1440.875/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630913239527" />
+    <state width="2560" height="137" key="GridCell.Tab.0.center" timestamp="1630920321681">
       <screen x="-545" y="-1080" width="2560" height="1080" />
     </state>
-    <state width="2560" height="137" key="GridCell.Tab.0.center/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630911845405" />
+    <state width="2560" height="137" key="GridCell.Tab.0.center/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630920321681" />
     <state width="1280" height="294" key="GridCell.Tab.0.center/0.25.1440.816/-545.-1055.2560.1055@0.25.1440.816" timestamp="1630368471434" />
     <state width="640" height="215" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1630889138235" />
-    <state width="2560" height="137" key="GridCell.Tab.0.left" timestamp="1630911845404">
+    <state width="2560" height="137" key="GridCell.Tab.0.center/0.25.1440.875/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630913239525" />
+    <state width="2560" height="137" key="GridCell.Tab.0.left" timestamp="1630920321667">
       <screen x="-545" y="-1080" width="2560" height="1080" />
     </state>
-    <state width="2560" height="137" key="GridCell.Tab.0.left/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630911845404" />
+    <state width="2560" height="137" key="GridCell.Tab.0.left/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630920321667" />
     <state width="1280" height="294" key="GridCell.Tab.0.left/0.25.1440.816/-545.-1055.2560.1055@0.25.1440.816" timestamp="1630368471434" />
     <state width="640" height="215" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1630889138234" />
-    <state width="2560" height="137" key="GridCell.Tab.0.right" timestamp="1630911845406">
+    <state width="2560" height="137" key="GridCell.Tab.0.left/0.25.1440.875/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630913239524" />
+    <state width="2560" height="137" key="GridCell.Tab.0.right" timestamp="1630920321685">
       <screen x="-545" y="-1080" width="2560" height="1080" />
     </state>
-    <state width="2560" height="137" key="GridCell.Tab.0.right/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630911845406" />
+    <state width="2560" height="137" key="GridCell.Tab.0.right/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630920321685" />
     <state width="1280" height="294" key="GridCell.Tab.0.right/0.25.1440.816/-545.-1055.2560.1055@0.25.1440.816" timestamp="1630368471435" />
     <state width="640" height="215" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1630889138235" />
+    <state width="2560" height="137" key="GridCell.Tab.0.right/0.25.1440.875/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630913239526" />
     <state x="-314" y="-1020" key="SettingsEditor" timestamp="1630908156812">
       <screen x="-545" y="-1080" width="2560" height="1080" />
     </state>
