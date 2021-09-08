@@ -77,7 +77,7 @@ public class MailGenerator {
     	double base = random.nextGaussian();
     	if (base < 0) base = -base;
     	int weight = (int) (mean + base * stddev);
-        return weight > MAIL_MAX_WEIGHT ? MAIL_MAX_WEIGHT : weight;
+        return Math.min(weight, MAIL_MAX_WEIGHT);
     }
     
     /**
@@ -102,7 +102,10 @@ public class MailGenerator {
         while(!complete){
             MailItem newMail =  generateMail();
             int timeToDeliver = newMail.getArrivalTime();
-            /** Check if key exists for this time **/
+
+            /* Check if key exists for this time*/
+
+
             if(allMail.containsKey(timeToDeliver)){
                 /** Add to existing array */
                 allMail.get(timeToDeliver).add(newMail);
