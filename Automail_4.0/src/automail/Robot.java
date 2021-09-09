@@ -1,6 +1,5 @@
 package automail;
-
-import exceptions.DoesNotHaveTubeException;
+import exceptions.DoesNotHaveSpaceException;
 import exceptions.ExcessiveDeliveryException;
 import exceptions.ItemTooHeavyException;
 import simulation.Clock;
@@ -14,7 +13,7 @@ import java.util.LinkedList;
 public class Robot {
 
     private static final int INDIVIDUAL_MAX_WEIGHT = 2000;
-    private final String type;
+    public final String type;
 
     private IMailDelivery delivery;
     private final String id;
@@ -41,7 +40,7 @@ public class Robot {
      */
     public Robot(IMailDelivery delivery, MailPool mailPool, int number, String type){
     	this.id = type + number; //Change later "R" value - will be determinate on the type
-        // current_state = RobotState.WAITING;
+        //current_state = RobotState.WAITING;
     	current_state = RobotState.RETURNING;
         current_floor = Building.getInstance().getMailroomLocationFloor();
         this.type = type;
@@ -57,6 +56,16 @@ public class Robot {
      */
     public void dispatch() {
     	receivedDispatch = true;
+    }
+
+    public int convert(String strength){
+        if(strength.equals("F")){
+            return 1;
+        } else if(strength.equals("B")){
+            return 5;
+        } else{
+            return 2;
+        }
     }
 
     /**
@@ -89,10 +98,13 @@ public class Robot {
     		case DELIVERING:
     			if(current_floor == destination_floor){ // If already here drop off either way
                     /** Delivery complete, report this to the simulator! */
+                    if(type.equals("B") && tube.size() > 0){
+                        deliveryItem = tube.pop();
+                    }
                     delivery.deliver(this, deliveryItem, "");
                     deliveryItem = null;
                     deliveryCounter++;
-                    if(deliveryCounter > 2){  // Implies a simulation bug - Modify based off type robot
+                    if(deliveryCounter > convert(type)){  // Implies a simulation bug - Modify based off type robot
                     	throw new ExcessiveDeliveryException();
                     }
                     /** Check if want to return, i.e. if there is no item in the tube*/
@@ -101,7 +113,10 @@ public class Robot {
                     }
                     else{
                         /** If there is another item, set the robot's route to the location to deliver the item */
-                        deliveryItem = tube.pop();
+                        if(!type.equals("B")){
+                            deliveryItem = tube.pop();
+                        }
+                        else{deliveryItem = tube.getFirst();}
                         setDestination();
                         changeState(RobotState.DELIVERING);
                     }
@@ -118,7 +133,12 @@ public class Robot {
      */
     private void setDestination() {
         /** Set the destination floor */
-        destination_floor = deliveryItem.getDestFloor();
+        if(type.equals("B") && tube.size() > 0){
+            destination_floor = tube.getFirst().getDestFloor();
+        }
+        else {
+            destination_floor = deliveryItem.getDestFloor();
+        }
     }
 
     /**
@@ -126,11 +146,24 @@ public class Robot {
      * @param destination the floor towards which the robot is moving
      */
     private void moveTowards(int destination) {
+        if(type.equals("F")){
+            if(current_floor < destination-3){
+                current_floor+= 3;
+            }
+            else if(current_floor < destination){
+                current_floor += destination - current_floor;
 
-        if(current_floor < destination){
-            current_floor++;
+            } else if(current_floor > destination ) {
+                current_floor -= 3;
+            } else{
+                current_floor -= destination + current_floor;
+            }
         } else {
-            current_floor--;
+            if (current_floor < destination) {
+                current_floor++;
+            } else {
+                current_floor--;
+            }
         }
     }
     
@@ -149,7 +182,12 @@ public class Robot {
     	}
     	current_state = nextState;
     	if(nextState == RobotState.DELIVERING){
-            System.out.printf("T: %3d > %7s-> [%s]%n", Clock.Time(), getIdTube(), deliveryItem.toString());
+    	    if(type.equals("B") && tube.size() > 0){
+                System.out.printf("T: %3d > %7s-> [%s]%n", Clock.Time(), getIdTube(), tube.getFirst().toString());
+            }
+    	    else {
+                System.out.printf("T: %3d > %7s-> [%s]%n", Clock.Time(), getIdTube(), deliveryItem.toString());
+            }
     	}
     }
 
@@ -158,27 +196,45 @@ public class Robot {
 	}
 
 	public boolean isEmpty() {
-		return (deliveryItem == null && tube == null);
+		return (deliveryItem == null && tube.size() == 0);
 	}
 
-	public void addToHand(MailItem mailItem) throws ItemTooHeavyException {
-		assert(deliveryItem == null);
-		deliveryItem = mailItem;
-		if (deliveryItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
-	}
 
-	public void addToTube(MailItem mailItem) throws ItemTooHeavyException {
-        switch(type){
-            case "R":
-                assert(tube.size() == 0);
-            case "B":
-                assert(tube.size() < 3);
-            case "F":
-                addToHand(mailItem);
+
+	public void addToRobot(MailItem mailItem) throws ItemTooHeavyException, DoesNotHaveSpaceException{
+        if(type.equals("R")){
+            if (deliveryItem == null) {
+                deliveryItem = mailItem;
+                if (deliveryItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
+            }
+            else if(tube.size() == 0){
+                tube.addLast(mailItem);
+                if (mailItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
+            }
+            else {
+                throw new DoesNotHaveSpaceException();
+            }
         }
-        tube.add(mailItem);
-		if (mailItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
-        // tube will have to be sum of all mailITemList
-	}
+        else if (type.equals("B")){
+            if(tube.size() < 5) {
+                tube.addFirst(mailItem);
+                if (mailItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
+
+            }
+            else {
+                throw new DoesNotHaveSpaceException();
+            }
+        }
+        else{
+            if(deliveryItem==null){
+                deliveryItem = mailItem;
+                if (deliveryItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
+            }
+            else{
+                throw new DoesNotHaveSpaceException();
+            }
+
+        }
+    }
 
 }

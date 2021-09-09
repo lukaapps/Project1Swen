@@ -4,6 +4,7 @@ import automail.Automail;
 import automail.Building;
 import automail.MailPool;
 import com.unimelb.swen30006.wifimodem.WifiModem;
+import exceptions.DoesNotHaveSpaceException;
 import exceptions.ExcessiveDeliveryException;
 import exceptions.ItemTooHeavyException;
 import util.Configuration;
@@ -75,7 +76,7 @@ public class Simulation {
 
         while(iMailDelivery.getDeliveredItems().size() != mailGenerator.MAIL_TO_CREATE)
         {
-        	// System.out.printf("Delivered: %4d; Created: %4d%n", MAIL_DELIVERED.size(), mailGenerator.MAIL_TO_CREATE);
+//        	System.out.printf("Delivered: %4d; Created: %4d%n", iMailDelivery.getDeliveredItems().size(), mailGenerator.MAIL_TO_CREATE);
             mailGenerator.addToMailPool();
             try {
                 automail.getMailPool().loadItemsToRobot();
@@ -83,14 +84,16 @@ public class Simulation {
 				{
 					automail.getRobots()[i].operate();
 				}
-			} catch (ExcessiveDeliveryException|ItemTooHeavyException e) {
+			} catch (ExcessiveDeliveryException | ItemTooHeavyException | DoesNotHaveSpaceException e) {
 				e.printStackTrace();
 				System.out.println("Simulation unable to complete.");
 				System.exit(0);
 			}
 
+
             Clock.Tick();
         }
+        //System.out.printf("Delivered: %4d; Created: %4d%n", iMailDelivery.getDeliveredItems().size(), mailGenerator.MAIL_TO_CREATE);
 
         printResults();
         System.out.println(wifiModem.Turnoff());

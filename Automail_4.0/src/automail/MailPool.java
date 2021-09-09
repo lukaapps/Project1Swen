@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.ListIterator;
 
 import exceptions.ItemTooHeavyException;
+import exceptions.DoesNotHaveSpaceException;
 
 import javax.swing.*;
 
@@ -18,6 +19,7 @@ public class MailPool {
 
 	private LinkedList<Item> pool;
 	private LinkedList<Robot> robots;
+	private int n = 0;
 
 	public MailPool(){
 		// Start empty
@@ -44,32 +46,52 @@ public class MailPool {
 	/**
      * load up any waiting robots with mailItems, if any.
      */
-	public void loadItemsToRobot() throws ItemTooHeavyException {
+	public void loadItemsToRobot() throws ItemTooHeavyException, DoesNotHaveSpaceException {
 		//List available robots
 		ListIterator<Robot> i = robots.listIterator();
 		while (i.hasNext()) loadItem(i);
 	}
 	
 	//load items to the robot
-	private void loadItem(ListIterator<Robot> i) throws ItemTooHeavyException {
+	private void loadItem(ListIterator<Robot> i) throws ItemTooHeavyException, DoesNotHaveSpaceException {
+
 		Robot robot = i.next();
 		assert(robot.isEmpty());
-		// System.out.printf("P: %3d%n", pool.size());
 		ListIterator<Item> j = pool.listIterator();
 		if (pool.size() > 0) {
 			try {
-			robot.addToHand(j.next().mailItem); // hand first as we want higher priority delivered first
-			j.remove();
-			if (pool.size() > 0) {
-				robot.addToTube(j.next().mailItem);
-				j.remove();
-			}
+				if (robot.type.equals("R")){
+					for(int k =0; k < Math.min(pool.size(), 2); k++){
+						robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
+						j.remove();
+					}
+				} else if (robot.type.equals("B")){
+					//System.out.println(pool.size());
+					//System.out.println(pool.getFirst().mailItem);
+					for(int k =0; k < Math.min(pool.size(), 5); k++){
+						robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
+						j.remove();
+
+					}
+
+				}
+				else{
+					for(int k =0; k< Math.min(pool.size(), 1); k++){
+						robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
+						j.remove();
+					}
+				}
+
 			robot.dispatch(); // send the robot off if it has any items to deliver
 			i.remove();       // remove from mailPool queue
-			} catch (Exception e) { 
-	            throw e; 
-	        } 
+			} catch (Exception e) {
+	            throw e;
+	        }
 		}
+	}
+
+	public LinkedList<Item> getPool(){
+		return pool;
 	}
 
 	/**
