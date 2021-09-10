@@ -40,7 +40,7 @@ public class Robot {
      */
     public Robot(IMailDelivery delivery, MailPool mailPool, int number, String type){
     	this.id = type + number; //Change later "R" value - will be determinate on the type
-        //current_state = RobotState.WAITING;
+
     	current_state = RobotState.RETURNING;
         current_floor = Building.getInstance().getMailroomLocationFloor();
         this.type = type;
@@ -48,6 +48,7 @@ public class Robot {
         this.mailPool = mailPool;
         this.receivedDispatch = false;
         this.deliveryCounter = 0;
+        //changeState(RobotState.WAITING);
 
     }
     
@@ -147,18 +148,19 @@ public class Robot {
      */
     private void moveTowards(int destination) {
         if(type.equals("F")){
-            if(current_floor < destination-3){
+            if(current_floor <= destination-3){
                 current_floor+= 3;
             }
             else if(current_floor < destination){
                 current_floor += destination - current_floor;
 
-            } else if(current_floor > destination ) {
+            } else if(current_floor >= destination + 3 ) {
                 current_floor -= 3;
             } else{
-                current_floor -= destination + current_floor;
+                current_floor -=  current_floor-destination;
             }
         } else {
+
             if (current_floor < destination) {
                 current_floor++;
             } else {
@@ -168,7 +170,7 @@ public class Robot {
     }
     
     public String getIdTube() {
-    	return String.format("%s(%1d)", this.id, (tube.size() == 0 ? 0 : 1));
+    	return String.format("%s(%1d)", this.id, (tube.size() == 0 ? 0 : tube.size()));
     }
     
     /**
