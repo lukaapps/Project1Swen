@@ -16,7 +16,10 @@ import java.util.HashMap;
  * This class simulates the behaviour of AutoMail
  */
 public class Simulation {
-	
+    private static int NUM_ROBOTS;
+    private static WifiModem wModem = null;
+
+
     /** Constant for the mail generator */
     private static IMailDelivery iMailDelivery;
 
@@ -24,6 +27,7 @@ public class Simulation {
     	
     	/** Load properties for simulation based on either default or a properties file.**/
     	Configuration configuration = Configuration.getInstance();
+
 
         iMailDelivery = new ReportDelivery();
 
@@ -60,7 +64,11 @@ public class Simulation {
          */
 
         /** Instantiate MailPool and Automail */
-     	MailPool mailPool = new MailPool();
+
+
+        //MailPool mailPool = new MailPool();
+        MailPool mailPool = new MailPool(wModem);
+
         int num_regular_robots = Integer.parseInt(configuration.getProperty(Configuration.REGULAR_ROBOTS_KEY));
         int num_fast_robots = Integer.parseInt(configuration.getProperty(Configuration.FAST_ROBOTS_KEY));
         int num_bulk_robots = Integer.parseInt(configuration.getProperty(Configuration.BULK_ROBOTS_KEY));

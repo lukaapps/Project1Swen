@@ -20,7 +20,9 @@
           <root url="jar://$MODULE_DIR$/WifiModem.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/WifiModem.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>

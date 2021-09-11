@@ -29,7 +29,8 @@ public class Robot {
     //private MailItem tube = null;
     private LinkedList<MailItem> tube = new LinkedList<MailItem>();
     private int deliveryCounter;
-    
+
+    private Charge chargeObject;
 
     /**
      * Initiates the robot's location at the start to be at the mailroom
@@ -55,7 +56,8 @@ public class Robot {
     /**
      * This is called when a robot is assigned the mail items and ready to dispatch for the delivery 
      */
-    public void dispatch() {
+    public void dispatch(Charge charge) {
+        this.chargeObject = charge;
     	receivedDispatch = true;
     }
 
@@ -82,6 +84,9 @@ public class Robot {
         			/** Tell the sorter the robot is ready */
         			mailPool.registerWaiting(this);
                 	changeState(RobotState.WAITING);
+                    /** Returns chargeObject */
+                    this.chargeObject = null;
+
                 } else {
                 	/** If the robot is not at the mailroom floor yet, then move towards it! */
                     moveTowards(Building.getInstance().getMailroomLocationFloor());
@@ -102,7 +107,9 @@ public class Robot {
                     if(type.equals("B") && tube.size() > 0){
                         deliveryItem = tube.pop();
                     }
-                    delivery.deliver(this, deliveryItem, "");
+                    //delivery.deliver(this, deliveryItem, "");
+                    delivery.deliver(this, deliveryItem, chargeObject.bill(deliveryItem));
+
                     deliveryItem = null;
                     deliveryCounter++;
                     if(deliveryCounter > convert(type)){  // Implies a simulation bug - Modify based off type robot

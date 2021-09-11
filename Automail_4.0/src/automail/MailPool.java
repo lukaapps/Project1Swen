@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Comparator;
 import java.util.ListIterator;
 
+import com.unimelb.swen30006.wifimodem.WifiModem;
 import exceptions.ItemTooHeavyException;
 import exceptions.DoesNotHaveSpaceException;
 
@@ -21,10 +22,10 @@ public class MailPool {
 
 	private LinkedList<Item> pool;
 	private LinkedList<Robot> robots;
-	private int n = 0;
 
-	public MailPool(){
+	public MailPool(WifiModem wModem){
 		// Start empty
+		this.chargeObject = new Charge(wModem);
 		pool = new LinkedList<Item>();
 		robots = new LinkedList<Robot>();
 	}
@@ -83,7 +84,7 @@ public class MailPool {
 
 				}
 
-			robot.dispatch(); // send the robot off if it has any items to deliver
+			robot.dispatch(chargeObject); // send the robot off if it has any items to deliver
 			i.remove();       // remove from mailPool queue
 			} catch (Exception e) {
 	            throw e;
@@ -110,8 +111,8 @@ public class MailPool {
 		// Use stable sort to keep arrival time relative positions
 
 		public Item(MailItem mailItem) {
-			destination = mailItem.getDestFloor();
-			this.charge = chargeObject.getCharge(destination);
+			this.charge = chargeObject.getCharge(mailItem.getDestFloor());
+			this.destination = mailItem.getDestFloor();
 			this.mailItem = mailItem;
 		}
 	}
@@ -120,12 +121,13 @@ public class MailPool {
 		@Override
 		public int compare(Item i1, Item i2) {
 			int order = 0;
-			if (i1.destination < i2.destination) {
-				order = 1;
-			} else if (i1.destination > i2.destination) {
-				order = -1;
-			}
-			return order;
+				if (i1.destination < i2.destination) {
+					order = 1;
+				} else if (i1.destination > i2.destination) {
+					order = -1;
+				}
+				return order;
+
 		}
 	}
 
