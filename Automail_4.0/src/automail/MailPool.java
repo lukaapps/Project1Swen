@@ -17,6 +17,8 @@ import javax.swing.*;
  */
 public class MailPool {
 
+	private Charge chargeObject;
+
 	private LinkedList<Item> pool;
 	private LinkedList<Robot> robots;
 	private int n = 0;
@@ -103,11 +105,14 @@ public class MailPool {
 
 	private class Item {
 		int destination;
+		double charge;
+
 		MailItem mailItem;
 		// Use stable sort to keep arrival time relative positions
 
 		public Item(MailItem mailItem) {
 			destination = mailItem.getDestFloor();
+			this.charge = chargeObject.getCharge(destination);
 			this.mailItem = mailItem;
 		}
 	}

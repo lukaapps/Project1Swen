@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d515468-12c8-4353-9e70-b33f6a30c8f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/automail/Charge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/automail/StatsLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/MailPool$Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool$Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/MailPool$ItemComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool$ItemComparator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/MailPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/Robot$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Robot$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/Robot$RobotState.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Robot$RobotState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exceptions/DoesNotHaveTubeException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/simulation/MailGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/simulation/MailGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/simulation/Simulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/simulation/Simulation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automail/MailPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/MailPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automail/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/DoesNotHaveTubeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/DoesNotHaveSpaceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/MailGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/MailGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Simulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +26,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JupyterTrust" id="4f85dd1f-fd4f-4bb8-9f2b-52b72e4a38bb" />
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1xR5EJcwCkbxkHH2ER8ytEin2dx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -42,6 +37,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1629420785353" />
@@ -107,87 +103,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="128" y="25" width="1024" height="816" key="#Project_Structure" timestamp="1630889097318">
-      <screen x="0" y="25" width="1440" height="816" />
-    </state>
-    <state x="128" y="25" width="1024" height="816" key="#Project_Structure/0.25.1440.816@0.25.1440.816" timestamp="1630889097318" />
-    <state x="518" y="228" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1631086802077">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="518" y="228" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1631086802077" />
-    <state x="518" y="232" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.1440.816@0.25.1440.816" timestamp="1630887286904" />
-    <state x="375" y="-788" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.1440.817/-545.-1055.2560.1055@-545.-1055.2560.1055" timestamp="1630304038523" />
-    <state width="1440" height="196" key="GridCell.Tab.0.bottom" timestamp="1631098983850">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="2560" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631020222379" />
-    <state width="1440" height="196" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1631098983850" />
-    <state width="2560" height="243" key="GridCell.Tab.0.bottom/0.25.1440.815/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631003663202" />
-    <state width="1280" height="294" key="GridCell.Tab.0.bottom/0.25.1440.816/-545.-1055.2560.1055@0.25.1440.816" timestamp="1630368471435" />
-    <state width="640" height="215" key="GridCell.Tab.0.bottom/0.25.1440.816@0.25.1440.816" timestamp="1630889138236" />
-    <state width="2560" height="245" key="GridCell.Tab.0.bottom/0.25.1440.875/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631005701158" />
-    <state width="1440" height="196" key="GridCell.Tab.0.center" timestamp="1631098983848">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="2560" height="245" key="GridCell.Tab.0.center/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631020222378" />
-    <state width="1440" height="196" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1631098983848" />
-    <state width="2560" height="243" key="GridCell.Tab.0.center/0.25.1440.815/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631003663197" />
-    <state width="1280" height="294" key="GridCell.Tab.0.center/0.25.1440.816/-545.-1055.2560.1055@0.25.1440.816" timestamp="1630368471434" />
-    <state width="640" height="215" key="GridCell.Tab.0.center/0.25.1440.816@0.25.1440.816" timestamp="1630889138235" />
-    <state width="2560" height="245" key="GridCell.Tab.0.center/0.25.1440.875/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631005701155" />
-    <state width="1440" height="196" key="GridCell.Tab.0.left" timestamp="1631098983848">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="2560" height="245" key="GridCell.Tab.0.left/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631020222377" />
-    <state width="1440" height="196" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1631098983848" />
-    <state width="2560" height="243" key="GridCell.Tab.0.left/0.25.1440.815/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631003663195" />
-    <state width="1280" height="294" key="GridCell.Tab.0.left/0.25.1440.816/-545.-1055.2560.1055@0.25.1440.816" timestamp="1630368471434" />
-    <state width="640" height="215" key="GridCell.Tab.0.left/0.25.1440.816@0.25.1440.816" timestamp="1630889138234" />
-    <state width="2560" height="245" key="GridCell.Tab.0.left/0.25.1440.875/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631005701151" />
-    <state width="1440" height="196" key="GridCell.Tab.0.right" timestamp="1631098983849">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="2560" height="245" key="GridCell.Tab.0.right/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631020222379" />
-    <state width="1440" height="196" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1631098983849" />
-    <state width="2560" height="243" key="GridCell.Tab.0.right/0.25.1440.815/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631003663201" />
-    <state width="1280" height="294" key="GridCell.Tab.0.right/0.25.1440.816/-545.-1055.2560.1055@0.25.1440.816" timestamp="1630368471435" />
-    <state width="640" height="215" key="GridCell.Tab.0.right/0.25.1440.816@0.25.1440.816" timestamp="1630889138235" />
-    <state width="2560" height="245" key="GridCell.Tab.0.right/0.25.1440.875/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631005701156" />
-    <state width="1277" height="384" key="GridCell.Tab.1.bottom" timestamp="1630922231485">
-      <screen x="-545" y="-1080" width="2560" height="1080" />
-    </state>
-    <state width="1277" height="384" key="GridCell.Tab.1.bottom/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630922231485" />
-    <state width="1277" height="384" key="GridCell.Tab.1.center" timestamp="1630922231484">
-      <screen x="-545" y="-1080" width="2560" height="1080" />
-    </state>
-    <state width="1277" height="384" key="GridCell.Tab.1.center/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630922231484" />
-    <state width="1277" height="384" key="GridCell.Tab.1.left" timestamp="1630922231483">
-      <screen x="-545" y="-1080" width="2560" height="1080" />
-    </state>
-    <state width="1277" height="384" key="GridCell.Tab.1.left/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630922231483" />
-    <state width="1277" height="384" key="GridCell.Tab.1.right" timestamp="1630922231484">
-      <screen x="-545" y="-1080" width="2560" height="1080" />
-    </state>
-    <state width="1277" height="384" key="GridCell.Tab.1.right/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630922231484" />
-    <state x="-314" y="-1020" key="SettingsEditor" timestamp="1630908156812">
-      <screen x="-545" y="-1080" width="2560" height="1080" />
-    </state>
-    <state x="-314" y="-1020" key="SettingsEditor/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630908156812" />
-    <state x="130" y="70" key="SettingsEditor/0.25.1440.816@0.25.1440.816" timestamp="1630889067305" />
-    <state x="192" y="-892" key="SettingsEditor/0.25.1440.817/-545.-1055.2560.1055@-545.-1055.2560.1055" timestamp="1630305043973" />
-    <state x="265" y="-800" width="939" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1630921573228">
-      <screen x="-545" y="-1080" width="2560" height="1080" />
-    </state>
-    <state x="265" y="-800" width="939" height="623" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1630921573228" />
-    <state x="438" y="-811" key="git4idea.branch.GitSmartOperationDialog" timestamp="1630304990508">
-      <screen x="-545" y="-1055" width="2560" height="1055" />
-    </state>
-    <state x="438" y="-811" key="git4idea.branch.GitSmartOperationDialog/0.25.1440.817/-545.-1055.2560.1055@-545.-1055.2560.1055" timestamp="1630304990508" />
-    <state x="400" y="-839" width="670" height="676" key="search.everywhere.popup" timestamp="1631003892322">
-      <screen x="-545" y="-1080" width="2560" height="1080" />
-    </state>
-    <state x="400" y="-839" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631003892322" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
