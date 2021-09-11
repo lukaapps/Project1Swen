@@ -63,25 +63,24 @@ public class MailPool {
 		if (pool.size() > 0) {
 			try {
 				if (robot.type.equals("R")){
-					for(int k =0; k < Math.min(pool.size(), 2); k++){
+					int y = pool.size();
+					for(int k =0; k < Math.min(y, 2); k++){
 						robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
 						j.remove();
 					}
 				} else if (robot.type.equals("B")){
-					//System.out.println(pool.size());
+					int y = pool.size();
 					//System.out.println(pool.getFirst().mailItem);
-					for(int k =0; k < Math.min(pool.size(), 5); k++){
+					for(int n =0; n < Math.min(y, 5); n++){
 						robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
 						j.remove();
-
 					}
 
 				}
 				else{
-					for(int k =0; k< Math.min(pool.size(), 1); k++){
-						robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
-						j.remove();
-					}
+					robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
+					j.remove();
+
 				}
 
 			robot.dispatch(); // send the robot off if it has any items to deliver
