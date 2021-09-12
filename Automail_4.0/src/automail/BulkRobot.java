@@ -46,7 +46,7 @@ public class BulkRobot extends Robot{
 
     public void addToRobot(MailItem mailItem, Robot robot) throws ItemTooHeavyException, DoesNotHaveSpaceException {
         if(robot.getTube().size() < 5){
-            robot.getTube().addLast(mailItem);
+            robot.getTube().addFirst(mailItem);
             if (mailItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
         }
         else {

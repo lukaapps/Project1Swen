@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c1928f6c-fc32-4bcd-a9b1-e24a0659b675" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/MailPool$Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool$Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/MailPool$ItemComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool$ItemComparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/MailPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automail.properties" beforeDir="false" afterPath="$PROJECT_DIR$/automail.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/automail/BulkRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/BulkRobot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/automail/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Robot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automail/BulkRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/BulkRobot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automail/FastRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/FastRobot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automail/MailPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/MailPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automail/NormalRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/NormalRobot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automail/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +94,7 @@
       <workItem from="1631087170761" duration="9050000" />
       <workItem from="1631237871118" duration="4449000" />
       <workItem from="1631433050489" duration="5379000" />
-      <workItem from="1631445881351" duration="1582000" />
+      <workItem from="1631445881351" duration="3614000" />
     </task>
     <servers />
   </component>
@@ -122,26 +118,30 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="160" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1631447688937" />
-    <state width="1440" height="268" key="GridCell.Tab.0.bottom" timestamp="1631447493803">
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1631448965259">
+      <screen x="0" y="25" width="1440" height="818" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.25.1440.818@0.25.1440.818" timestamp="1631448965259" />
+    <state width="1440" height="270" key="GridCell.Tab.0.bottom" timestamp="1631449184869">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2560" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631442190429" />
-    <state width="1440" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1631447493803" />
-    <state width="1440" height="268" key="GridCell.Tab.0.center" timestamp="1631447493802">
+    <state width="1440" height="270" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1631449184869" />
+    <state width="1440" height="270" key="GridCell.Tab.0.center" timestamp="1631449184866">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2560" height="268" key="GridCell.Tab.0.center/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631442190425" />
-    <state width="1440" height="268" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1631447493802" />
-    <state width="1440" height="268" key="GridCell.Tab.0.left" timestamp="1631447493801">
+    <state width="1440" height="270" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1631449184866" />
+    <state width="1440" height="270" key="GridCell.Tab.0.left" timestamp="1631449184865">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2560" height="268" key="GridCell.Tab.0.left/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631442190424" />
-    <state width="1440" height="268" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1631447493801" />
-    <state width="1440" height="268" key="GridCell.Tab.0.right" timestamp="1631447493803">
+    <state width="1440" height="270" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1631449184865" />
+    <state width="1440" height="270" key="GridCell.Tab.0.right" timestamp="1631449184867">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="2560" height="268" key="GridCell.Tab.0.right/0.0.1440.900/-545.-1080.2560.1080@-545.-1080.2560.1080" timestamp="1631442190428" />
-    <state width="1440" height="268" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1631447493803" />
+    <state width="1440" height="270" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1631449184867" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
