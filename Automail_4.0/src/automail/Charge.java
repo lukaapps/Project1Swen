@@ -32,7 +32,7 @@ public class Charge {
             double avgOperatingTime = this.avgOperatingTime;
 
             if (feeCharging == true){
-                return String.format(" | Service Fee: %4f | Maintenance: %2f | Avg. Operating Time: %4f | Total Charge: %4f",
+                return String.format(" | Service Fee: %.2f | Maintenance: %.2f | Avg. Operating Time: %.2f | Total Charge: %.2f",
                         serviceFee, maintenanceCost, avgOperatingTime, charge);
             }
             else {

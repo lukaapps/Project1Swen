@@ -80,6 +80,15 @@ public class Robot {
     	switch(current_state) {
     		/** This state is triggered when the robot is returning to the mailroom after a delivery */
     		case RETURNING:
+                if(type.equals("B")) {
+                    BulkRobot.incrementTotalBulkOpTime();
+                }
+                if(type.equals("R")) {
+                    NormalRobot.incrementTotalNormalOpTime();
+                }
+                if(type.equals("F")){
+                    FastRobot.incrementTotalFastOpTime();
+                }
     			/** If its current position is at the mailroom, then the robot should change state */
                 if(current_floor == Building.getInstance().getMailroomLocationFloor()){
         			/** Tell the sorter the robot is ready */
@@ -103,6 +112,15 @@ public class Robot {
                 }
                 break;
     		case DELIVERING:
+                if(type.equals("B")) {
+                    BulkRobot.incrementTotalBulkOpTime();
+                }
+                if(type.equals("R")) {
+                    NormalRobot.incrementTotalNormalOpTime();
+                }
+                if(type.equals("F")){
+                    FastRobot.incrementTotalFastOpTime();
+                }
     			if(current_floor == destination_floor){ // If already here drop off either way
                     /** Delivery complete, report this to the simulator! */
                     if(type.equals("B") && tube.size() > 0){
@@ -132,6 +150,9 @@ public class Robot {
     			} else {
 	        		/** The robot is not at the destination yet, move towards it! */
 	                moveTowards(destination_floor);
+
+
+
     			}
                 break;
     	}
@@ -169,27 +190,27 @@ public class Robot {
             else{
                 current_floor -=  current_floor-destination;
             }
-            FastRobot.incrementTotalFastOpTime();
+           // FastRobot.incrementTotalFastOpTime();
 
         } else {
 
             if (current_floor < destination) {
                 current_floor++;
-                if(type.equals("B")) {
-                    BulkRobot.incrementTotalBulkOpTime();
-                }
-                if(type.equals("R")) {
-                    NormalRobot.incrementTotalNormalOpTime();
-                }
+//                if(type.equals("B")) {
+//                    BulkRobot.incrementTotalBulkOpTime();
+//                }
+//                if(type.equals("R")) {
+//                    NormalRobot.incrementTotalNormalOpTime();
+//                }
 
             } else {
                 current_floor--;
-                if(type.equals("B")) {
-                    BulkRobot.incrementTotalBulkOpTime();
-                }
-                if(type.equals("R")) {
-                    NormalRobot.incrementTotalNormalOpTime();
-                }
+//                if(type.equals("B")) {
+//                    BulkRobot.incrementTotalBulkOpTime();
+//                }
+//                if(type.equals("R")) {
+//                    NormalRobot.incrementTotalNormalOpTime();
+//                }
 
 
             }
