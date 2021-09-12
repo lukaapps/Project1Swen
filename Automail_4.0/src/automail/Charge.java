@@ -10,7 +10,9 @@ import util.Configuration;
 public class Charge {
 
     /** Details about a Charge **/
-
+    private double fastService =0;
+    private double bulkService = 0;
+    private double normalService = 0;
     private double serviceFee = 0;
     private double maintenanceCost = 0;
     private double avgOperatingTime = 0;
@@ -44,11 +46,36 @@ public class Charge {
         Charge.feeCharging = status;
     }
 
-    public void setServiceFee(int floor) throws Exception {
+    public void setServiceFee(int floor, Robot robot) throws Exception {
         WifiModem w = WifiModem.getInstance(floor);
         double serviceFee = w.forwardCallToAPI_LookupPrice(floor);
         if (serviceFee >= 0) {
-            this.serviceFee = serviceFee;
+            if(robot instanceof BulkRobot){
+                this.bulkService = serviceFee;
+                this.serviceFee = bulkService;
+
+            }
+            else if(robot instanceof FastRobot){
+                this.fastService = serviceFee;
+                this.serviceFee = fastService;
+
+            }
+            else{
+                this.normalService = serviceFee;
+                this.serviceFee = normalService;
+
+            }
+        }
+        else{
+            if(robot instanceof BulkRobot){
+                this.serviceFee = bulkService;
+            }
+            else if(robot instanceof FastRobot){
+                this.serviceFee = fastService;
+            }
+            else{
+                this.serviceFee = normalService;
+            }
         }
     }
 
@@ -82,9 +109,12 @@ public class Charge {
 
     //TOTAL CHARGE
     public double getCharge(int floor, Robot robot) throws Exception {
-        setServiceFee(floor);
-        calculateMaintenanceCost(floor, robot);
-        return this.getServiceFee() + this.getMaintenanceCost();
+        if(feeCharging) {
+            setServiceFee(floor, robot);
+            calculateMaintenanceCost(floor, robot);
+            return this.getServiceFee() + this.getMaintenanceCost();
+        }
+        else{ return 0.0;}
     }
 
 
