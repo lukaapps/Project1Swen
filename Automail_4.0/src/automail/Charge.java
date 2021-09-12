@@ -4,20 +4,20 @@ import com.unimelb.swen30006.wifimodem.WifiModem;
 
 //import java.awt.Robot;
 import java.lang.*;
+import java.util.ArrayList;
+import java.util.*;
 import automail.Robot;
 import util.Configuration;
 
 public class Charge {
 
     /** Details about a Charge **/
-    private double fastService =0;
-    private double bulkService = 0;
-    private double normalService = 0;
+
     private double serviceFee = 0;
+    private static ArrayList<Double> floorServiceFees = new ArrayList<Double>(Collections.nCopies(Building.getInstance().getnFloors(),0.00));
     private double maintenanceCost = 0;
     private double avgOperatingTime = 0;
     private static boolean feeCharging = false;
-
 
     public WifiModem modem;
 
@@ -50,32 +50,11 @@ public class Charge {
         WifiModem w = WifiModem.getInstance(floor);
         double serviceFee = w.forwardCallToAPI_LookupPrice(floor);
         if (serviceFee >= 0) {
-            if(robot instanceof BulkRobot){
-                this.bulkService = serviceFee;
-                this.serviceFee = bulkService;
-
-            }
-            else if(robot instanceof FastRobot){
-                this.fastService = serviceFee;
-                this.serviceFee = fastService;
-
-            }
-            else{
-                this.normalService = serviceFee;
-                this.serviceFee = normalService;
-
-            }
+            this.serviceFee = serviceFee;
+            floorServiceFees.set(floor-1, serviceFee);
         }
-        else{
-            if(robot instanceof BulkRobot){
-                this.serviceFee = bulkService;
-            }
-            else if(robot instanceof FastRobot){
-                this.serviceFee = fastService;
-            }
-            else{
-                this.serviceFee = normalService;
-            }
+        else {
+            this.serviceFee = floorServiceFees.get(floor-1);
         }
     }
 
