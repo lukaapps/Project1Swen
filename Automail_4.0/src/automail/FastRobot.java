@@ -1,10 +1,13 @@
 package automail;
 
+import exceptions.DoesNotHaveSpaceException;
+import exceptions.ItemTooHeavyException;
 import simulation.IMailDelivery;
 import util.Configuration;
 
 public class FastRobot extends Robot {
     private static final double FASTRATE = 0.05;
+    private static final int INDIVIDUAL_MAX_WEIGHT = 2000;
     private static int numFastRobots = 0;
     private static double totalFastOpTime = 0;
     private static double avgFastOpTime = 0;
@@ -41,5 +44,14 @@ public class FastRobot extends Robot {
         FastRobot.totalFastOpTime ++;
     }
 
-
+    @Override
+    public void addToRobot(MailItem mailItem, Robot robot) throws ItemTooHeavyException, DoesNotHaveSpaceException {
+        if(robot.deliveryItem==null){
+            deliveryItem = mailItem;
+            if (deliveryItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
+        }
+        else{
+            throw new DoesNotHaveSpaceException();
+        }
+    }
 }

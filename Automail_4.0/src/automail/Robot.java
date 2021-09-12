@@ -10,7 +10,7 @@ import java.util.LinkedList;
 /**
  * The robot delivers mail!
  */
-public class Robot {
+public abstract class Robot {
 
     private static final int INDIVIDUAL_MAX_WEIGHT = 2000;
     public final String type;
@@ -26,7 +26,7 @@ public class Robot {
     private boolean receivedDispatch;
 
 
-    private MailItem deliveryItem = null;
+    protected MailItem deliveryItem = null;
     //private MailItem tube = null;
     private LinkedList<MailItem> tube = new LinkedList<MailItem>();
     private int deliveryCounter;
@@ -182,7 +182,6 @@ public class Robot {
             }
             else if(current_floor < destination){
                 current_floor += destination - current_floor;
-
             }
             else if(current_floor >= destination + 3 ) {
                 current_floor -= 3;
@@ -190,27 +189,14 @@ public class Robot {
             else{
                 current_floor -=  current_floor-destination;
             }
-           // FastRobot.incrementTotalFastOpTime();
 
         } else {
 
             if (current_floor < destination) {
                 current_floor++;
-//                if(type.equals("B")) {
-//                    BulkRobot.incrementTotalBulkOpTime();
-//                }
-//                if(type.equals("R")) {
-//                    NormalRobot.incrementTotalNormalOpTime();
-//                }
 
             } else {
                 current_floor--;
-//                if(type.equals("B")) {
-//                    BulkRobot.incrementTotalBulkOpTime();
-//                }
-//                if(type.equals("R")) {
-//                    NormalRobot.incrementTotalNormalOpTime();
-//                }
 
 
             }
@@ -241,7 +227,11 @@ public class Robot {
     	}
     }
 
-	public LinkedList<MailItem> getTube() {
+    public void setTube(LinkedList<MailItem> tube) {
+        this.tube = tube;
+    }
+
+    public LinkedList<MailItem> getTube() {
 		return tube;
 	}
 
@@ -250,41 +240,6 @@ public class Robot {
 	}
 
 
-
-	public void addToRobot(MailItem mailItem) throws ItemTooHeavyException, DoesNotHaveSpaceException{
-        if(type.equals("R")){
-            if (deliveryItem == null) {
-                deliveryItem = mailItem;
-                if (deliveryItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
-            }
-            else if(tube.size() == 0){
-                tube.addLast(mailItem);
-                if (mailItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
-            }
-            else {
-                throw new DoesNotHaveSpaceException();
-            }
-        }
-        else if (type.equals("B")){
-            if(tube.size() < 5) {
-                tube.addFirst(mailItem);
-                if (mailItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
-
-            }
-            else {
-                throw new DoesNotHaveSpaceException();
-            }
-        }
-        else{
-            if(deliveryItem==null){
-                deliveryItem = mailItem;
-                if (deliveryItem.weight > INDIVIDUAL_MAX_WEIGHT) throw new ItemTooHeavyException();
-            }
-            else{
-                throw new DoesNotHaveSpaceException();
-            }
-
-        }
-    }
+    public abstract void addToRobot(MailItem mailItem, Robot robot) throws ItemTooHeavyException, DoesNotHaveSpaceException;
 
 }
