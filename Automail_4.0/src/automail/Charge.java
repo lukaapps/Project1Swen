@@ -14,7 +14,7 @@ public class Charge {
     /** Details about a Charge **/
 
     private double serviceFee = 0;
-    private static ArrayList<Double> floorServiceFees = new ArrayList<Double>(Collections.nCopies(Building.getInstance().getnFloors(),0.00));
+    private static ArrayList<Double> floorServiceFees = new ArrayList<Double>(Collections.nCopies(Building.getInstance().getnFloors() ,0.00));
     private double maintenanceCost = 0;
     private double avgOperatingTime = 0;
     private static boolean feeCharging = false;
@@ -51,10 +51,10 @@ public class Charge {
         double serviceFee = w.forwardCallToAPI_LookupPrice(floor);
         if (serviceFee >= 0) {
             this.serviceFee = serviceFee;
-            floorServiceFees.set(floor-1, serviceFee);
+            floorServiceFees.set(floor-Building.getInstance().getLowestFloor(), serviceFee);
         }
         else {
-            this.serviceFee = floorServiceFees.get(floor-1);
+            this.serviceFee = floorServiceFees.get(floor-Building.getInstance().getLowestFloor());
         }
     }
 
