@@ -66,20 +66,20 @@ public class MailPool {
 				if (robot.type.equals("R") && robot.getTube().size() < 1){
 					int y = pool.size();
 					for(int k =0; k < Math.min(y, 2); k++){
-						robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
+						robot.addToRobot(j.next().mailItem, robot); // hand first as we want higher priority delivered first
 						j.remove();
 					}
 				} else if (robot.type.equals("B") && robot.getTube().size() < 5){
 					int y = pool.size();
 					//System.out.println(pool.getFirst().mailItem);
 					for(int n =0; n < Math.min(y, 5); n++){
-						robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
+						robot.addToRobot(j.next().mailItem, robot); // hand first as we want higher priority delivered first
 						j.remove();
 					}
 
 				}
 				else if (robot.type.equals("F")){
-					robot.addToRobot(j.next().mailItem); // hand first as we want higher priority delivered first
+					robot.addToRobot(j.next().mailItem, robot); // hand first as we want higher priority delivered first
 					j.remove();
 				}
 
