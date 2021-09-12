@@ -2,21 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1928f6c-fc32-4bcd-a9b1-e24a0659b675" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Automail.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Automail.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automail.properties" beforeDir="false" afterPath="$PROJECT_DIR$/automail.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/automail/Automail.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Automail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/automail/BulkRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/BulkRobot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/Charge.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Charge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/automail/FastRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/FastRobot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/MailPool$Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool$Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/MailPool$ItemComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool$ItemComparator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/MailPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/automail/NormalRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/NormalRobot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/Robot$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Robot$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Robot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/StatsLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/simulation/Simulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/simulation/Simulation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/simulation/MailGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/simulation/MailGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/util/Configuration.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/util/Configuration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/Automail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Automail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/BulkRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/BulkRobot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automail/Charge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Charge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/FastRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/FastRobot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automail/MailPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/MailPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/NormalRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/NormalRobot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automail/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automail/StatsLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulation/MailGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/MailGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Configuration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +52,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1629420785353" />
@@ -54,7 +65,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />

@@ -22,6 +22,8 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$MODULE_DIR$/WifiModem.jar!/" />
+          <root url="file://$MODULE_DIR$/src" />
+          <root url="file://$MODULE_DIR$/src" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -25,6 +25,7 @@ public class Robot {
     private MailPool mailPool;
     private boolean receivedDispatch;
 
+
     private MailItem deliveryItem = null;
     //private MailItem tube = null;
     private LinkedList<MailItem> tube = new LinkedList<MailItem>();
@@ -52,7 +53,7 @@ public class Robot {
         //changeState(RobotState.WAITING);
 
     }
-    
+
     /**
      * This is called when a robot is assigned the mail items and ready to dispatch for the delivery 
      */
@@ -75,7 +76,7 @@ public class Robot {
      * This is called on every time step
      * @throws ExcessiveDeliveryException if robot delivers more than the capacity of the tube without refilling
      */
-    public void operate() throws ExcessiveDeliveryException {   
+    public void operate() throws ExcessiveDeliveryException, Exception {
     	switch(current_state) {
     		/** This state is triggered when the robot is returning to the mailroom after a delivery */
     		case RETURNING:
@@ -108,7 +109,7 @@ public class Robot {
                         deliveryItem = tube.pop();
                     }
                     //delivery.deliver(this, deliveryItem, "");
-                    delivery.deliver(this, deliveryItem, chargeObject.bill(deliveryItem));
+                    delivery.deliver(this, deliveryItem, chargeObject.bill(deliveryItem, this));
 
                     deliveryItem = null;
                     deliveryCounter++;
@@ -161,17 +162,36 @@ public class Robot {
             else if(current_floor < destination){
                 current_floor += destination - current_floor;
 
-            } else if(current_floor >= destination + 3 ) {
+            }
+            else if(current_floor >= destination + 3 ) {
                 current_floor -= 3;
-            } else{
+            }
+            else{
                 current_floor -=  current_floor-destination;
             }
+            FastRobot.incrementTotalFastOpTime();
+
         } else {
 
             if (current_floor < destination) {
                 current_floor++;
+                if(type.equals("B")) {
+                    BulkRobot.incrementTotalBulkOpTime();
+                }
+                if(type.equals("R")) {
+                    NormalRobot.incrementTotalNormalOpTime();
+                }
+
             } else {
                 current_floor--;
+                if(type.equals("B")) {
+                    BulkRobot.incrementTotalBulkOpTime();
+                }
+                if(type.equals("R")) {
+                    NormalRobot.incrementTotalNormalOpTime();
+                }
+
+
             }
         }
     }

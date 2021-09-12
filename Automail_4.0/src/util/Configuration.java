@@ -1,5 +1,6 @@
 package util;
 
+import automail.Charge;
 import simulation.Clock;
 import java.io.FileReader;
 import java.io.IOException;
@@ -89,6 +90,7 @@ public class Configuration extends Properties
 
         // Calculate charge for a service fee and a maintenance cost.
         boolean fee_Charging = Boolean.parseBoolean(getProperty(FEE_CHARGING_KEY));
+        Charge.setFeeCharging(fee_Charging);
         System.out.println("Is fee charging enabled: " + fee_Charging);
     }
 }

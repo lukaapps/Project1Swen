@@ -17,8 +17,14 @@ public class Automail {
     	/** Initialize robots, currently only regular robots */
     	robots = new Robot[totalRobots];
     	for (i = 0; i < numRegRobots; i++) robots[i] = new NormalRobot(delivery, mailPool, i);
+    	NormalRobot.setNumNormalRobots(numRegRobots);
+
     	for(j = i; j < numRegRobots+numFastRobots; j++) robots[j] = new FastRobot(delivery, mailPool, j);
+    	FastRobot.setNumFastRobots(numFastRobots);
+
     	for(k = j; k < totalRobots; k++) robots[k] = new BulkRobot(delivery, mailPool, k);
+        BulkRobot.setNumBulkRobots(numBulkRobots);
+
     }
 
     public Robot[] getRobots() {

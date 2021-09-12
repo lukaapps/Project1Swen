@@ -34,7 +34,7 @@ public class MailPool {
      * Adds an item to the mail pool
      * @param mailItem the mail item being added.
      */
-	public void addToPool(MailItem mailItem) {
+	public void addToPool(MailItem mailItem) throws Exception {
 		Item item = new Item(mailItem);
 		pool.add(item);
 		pool.sort(new ItemComparator());
@@ -110,8 +110,7 @@ public class MailPool {
 		MailItem mailItem;
 		// Use stable sort to keep arrival time relative positions
 
-		public Item(MailItem mailItem) {
-			this.charge = chargeObject.getCharge(mailItem.getDestFloor());
+		public Item(MailItem mailItem) throws Exception {
 			this.destination = mailItem.getDestFloor();
 			this.mailItem = mailItem;
 		}
