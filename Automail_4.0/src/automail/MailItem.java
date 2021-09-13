@@ -7,6 +7,7 @@ import java.util.TreeMap;
 
 /**
  * Represents a mail item
+ * Monday 3:15 Group 10
  */
 public class MailItem {
 	

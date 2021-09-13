@@ -10,6 +10,10 @@ import java.util.LinkedList;
 /**
  * The robot delivers mail!
  */
+
+/**
+ * Monday 3:15 Group 10
+ * **/
 public abstract class Robot {
 
     private static final int INDIVIDUAL_MAX_WEIGHT = 2000;

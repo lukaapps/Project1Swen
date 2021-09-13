@@ -1,7 +1,9 @@
 package automail;
 
 import util.Configuration;
-
+/**
+ * Monday 3:15 Group 10
+ * **/
 
 public class Building
 {

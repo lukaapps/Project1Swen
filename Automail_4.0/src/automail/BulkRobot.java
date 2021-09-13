@@ -5,6 +5,9 @@ import exceptions.ItemTooHeavyException;
 import simulation.IMailDelivery;
 import util.Configuration;
 
+/**
+ * Monday 3:15 Group 10
+ * **/
 public class BulkRobot extends Robot{
     /**Initalise BulkRobot using Polymorphism**/
     private static final double BULKRATE = 0.01;

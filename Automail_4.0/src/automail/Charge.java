@@ -9,6 +9,9 @@ import java.util.*;
 import automail.Robot;
 import util.Configuration;
 
+/**
+ * Monday 3:15 Group 10
+ * **/
 public class Charge {
 
     /** Details about a Charge **/

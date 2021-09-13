@@ -1,7 +1,9 @@
 package automail;
 /**test*/
 import simulation.IMailDelivery;
-
+/**
+ * Monday 3:15 Group 10
+ * **/
 public class Automail {
 
     private Robot[] robots;

@@ -11,7 +11,9 @@ import util.Configuration;
 import util.ReportDelivery;
 
 import java.util.HashMap;
-
+/**
+ * Monday 3:15 Group 10
+ * **/
 /**
  * This class simulates the behaviour of AutoMail
  */

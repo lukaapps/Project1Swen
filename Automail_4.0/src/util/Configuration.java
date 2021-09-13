@@ -5,7 +5,9 @@ import simulation.Clock;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
-
+/**
+ * Monday 3:15 Group 10
+ * **/
 public class Configuration extends Properties
 {
     public static final String SEED_KEY = "Seed";

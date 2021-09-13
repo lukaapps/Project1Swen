@@ -5,7 +5,9 @@ import java.util.*;
 import automail.Building;
 import automail.MailItem;
 import automail.MailPool;
-
+/**
+ * Monday 3:15 Group 10
+ * **/
 /**
  * This class generates the mail
  */

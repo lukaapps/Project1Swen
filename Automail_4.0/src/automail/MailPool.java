@@ -16,6 +16,9 @@ import javax.swing.*;
  * The data structure and algorithms used in the MailPool is your choice.
  * 
  */
+/**
+ * Monday 3:15 Group 10
+ * **/
 public class MailPool {
 
 	private Charge chargeObject;

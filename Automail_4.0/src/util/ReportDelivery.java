@@ -9,7 +9,9 @@ import simulation.IMailDelivery;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * Monday 3:15 Group 10
+ * **/
 public class ReportDelivery implements IMailDelivery {
 
 

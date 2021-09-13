@@ -4,7 +4,9 @@ import exceptions.DoesNotHaveSpaceException;
 import exceptions.ItemTooHeavyException;
 import simulation.IMailDelivery;
 import util.Configuration;
-
+/**
+ * Monday 3:15 Group 10
+ * **/
 public class FastRobot extends Robot {
     private static final double FASTRATE = 0.05;
     private static final int INDIVIDUAL_MAX_WEIGHT = 2000;
