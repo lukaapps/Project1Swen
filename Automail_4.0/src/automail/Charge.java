@@ -29,7 +29,7 @@ public class Charge {
     public String bill(MailItem mailItem, Robot robot) throws Exception {
             int floor = mailItem.getDestFloor();
             double charge = this.getCharge(floor, robot);
-            double maintenanceCost = this.getMaintenanceCost();
+            double maintenanceCost = this.maintenanceCost;
             double serviceFee = this.serviceFee;
             double avgOperatingTime = this.avgOperatingTime;
 
@@ -59,7 +59,7 @@ public class Charge {
         return this.serviceFee;
     }
 
-    public void calculateMaintenanceCost(int floor, Robot robot) {
+    public double calculateMaintenanceCost(int floor, Robot robot) {
         if (robot instanceof BulkRobot) {
             BulkRobot.setAvgBulkOpTime();
             this.maintenanceCost = BulkRobot.getBULKRATE() * BulkRobot.getAvgBulkOpTime();
@@ -75,23 +75,15 @@ public class Charge {
             this.maintenanceCost = NormalRobot.getNORMALRATE() * NormalRobot.getAvgNormalOpTime();
             this.avgOperatingTime = NormalRobot.getAvgNormalOpTime();
         }
-    }
-
-    public double getMaintenanceCost() {
         return  this.maintenanceCost;
     }
-
-
 
     //TOTAL CHARGE
     public double getCharge(int floor, Robot robot) throws Exception {
         if(feeCharging) {
-            calculateMaintenanceCost(floor, robot);
-            return retrieveServiceFee(floor, robot) + this.getMaintenanceCost();
+            return retrieveServiceFee(floor, robot) + calculateMaintenanceCost(floor, robot);
         }
         else{ return 0.0;}
     }
-
-
 
 }
