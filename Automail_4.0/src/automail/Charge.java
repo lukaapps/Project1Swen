@@ -37,7 +37,7 @@ public class Charge {
     public String bill(MailItem mailItem, Robot robot) throws Exception {
             int floor = mailItem.getDestFloor();
             double charge = this.getCharge(floor, robot);
-            double maintenanceCost = this.getMaintenanceCost();
+            double maintenanceCost = this.maintenanceCost;
             double serviceFee = this.serviceFee;
             double avgOperatingTime = this.avgOperatingTime;
 
@@ -62,7 +62,7 @@ public class Charge {
     /**
      * @param floor - used to calculate the service fee for the chosen floor
      * **/
-    public void setServiceFee(int floor) throws Exception {
+    public double retrieveServiceFee(int floor) throws Exception {
         WifiModem w = WifiModem.getInstance(floor);
         double serviceFee = w.forwardCallToAPI_LookupPrice(floor);
         if (serviceFee >= 0) {
@@ -72,18 +72,16 @@ public class Charge {
         else {
             this.serviceFee = floorServiceFees.get(floor-Building.getInstance().getLowestFloor());
         }
-    }
-
-    public double getServiceFee() {
         return this.serviceFee;
     }
+
 
     /**
      * Maintenance cost - is the another factor that goes into the total charge for the given robot
      * and floor - maintenance cost is dependent on the type of robot and is calulated by rate multiplied by
      * average operating time
      * @param robot  - the robot in question - usually referencing type**/
-    public void calculateMaintenanceCost( Robot robot) {
+    public double calculateMaintenanceCost( Robot robot) {
         if (robot instanceof BulkRobot) {
             BulkRobot.setAvgBulkOpTime();
             this.maintenanceCost = BulkRobot.getBULKRATE() * BulkRobot.getAvgBulkOpTime();
@@ -99,13 +97,8 @@ public class Charge {
             this.maintenanceCost = NormalRobot.getNORMALRATE() * NormalRobot.getAvgNormalOpTime();
             this.avgOperatingTime = NormalRobot.getAvgNormalOpTime();
         }
-    }
-
-    public double getMaintenanceCost() {
         return  this.maintenanceCost;
     }
-
-
 
     /**
      * Used to get the total charge for the given robot and floor
@@ -113,9 +106,7 @@ public class Charge {
      * @param floor - the floor being used when looking up the API**/
     public double getCharge(int floor, Robot robot) throws Exception {
         if(feeCharging) {
-            setServiceFee(floor);
-            calculateMaintenanceCost(robot);
-            return this.getServiceFee() + this.getMaintenanceCost();
+            return retrieveServiceFee(floor) + calculateMaintenanceCost(robot);
         }
         else{ return 0.0;}
     }
