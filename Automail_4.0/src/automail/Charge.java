@@ -62,7 +62,7 @@ public class Charge {
     /**
      * @param floor - used to calculate the service fee for the chosen floor
      * **/
-    public void setServiceFee(int floor) throws Exception {
+    public double retriveServiceFee(int floor) throws Exception {
         WifiModem w = WifiModem.getInstance(floor);
         double serviceFee = w.forwardCallToAPI_LookupPrice(floor);
         if (serviceFee >= 0) {
@@ -72,11 +72,9 @@ public class Charge {
         else {
             this.serviceFee = floorServiceFees.get(floor-Building.getInstance().getLowestFloor());
         }
-    }
-
-    public double getServiceFee() {
         return this.serviceFee;
     }
+
 
     /**
      * Maintenance cost - is the another factor that goes into the total charge for the given robot
@@ -113,9 +111,8 @@ public class Charge {
      * @param floor - the floor being used when looking up the API**/
     public double getCharge(int floor, Robot robot) throws Exception {
         if(feeCharging) {
-            setServiceFee(floor);
             calculateMaintenanceCost(robot);
-            return this.getServiceFee() + this.getMaintenanceCost();
+            return this.retriveServiceFee(floor) + this.getMaintenanceCost();
         }
         else{ return 0.0;}
     }
