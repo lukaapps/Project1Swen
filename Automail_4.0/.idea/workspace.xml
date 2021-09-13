@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c1928f6c-fc32-4bcd-a9b1-e24a0659b675" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automail.properties" beforeDir="false" afterPath="$PROJECT_DIR$/automail.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/Charge.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Charge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/MailPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automail/Charge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Charge.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

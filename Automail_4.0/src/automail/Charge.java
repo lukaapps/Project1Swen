@@ -46,7 +46,7 @@ public class Charge {
         Charge.feeCharging = status;
     }
 
-    public void setServiceFee(int floor, Robot robot) throws Exception {
+    public double retrieveServiceFee(int floor, Robot robot) throws Exception {
         WifiModem w = WifiModem.getInstance(floor);
         double serviceFee = w.forwardCallToAPI_LookupPrice(floor);
         if (serviceFee >= 0) {
@@ -56,9 +56,6 @@ public class Charge {
         else {
             this.serviceFee = floorServiceFees.get(floor-Building.getInstance().getLowestFloor());
         }
-    }
-
-    public double getServiceFee() {
         return this.serviceFee;
     }
 
@@ -89,9 +86,8 @@ public class Charge {
     //TOTAL CHARGE
     public double getCharge(int floor, Robot robot) throws Exception {
         if(feeCharging) {
-            setServiceFee(floor, robot);
             calculateMaintenanceCost(floor, robot);
-            return this.getServiceFee() + this.getMaintenanceCost();
+            return retrieveServiceFee(floor, robot) + this.getMaintenanceCost();
         }
         else{ return 0.0;}
     }
