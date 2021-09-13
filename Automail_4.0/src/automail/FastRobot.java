@@ -16,6 +16,13 @@ public class FastRobot extends Robot {
         super(delivery, mailPool, number, "F");
     }
 
+
+    /**
+     * Getters and setters for
+     * FastRate - The rate at which the robot is being charged
+     * NumFastRobots - the number of fast robots in the pool
+     * AvgFastOpTime - the avg operating time for fast robots
+     * TotalFastOpTime - the total operating time for all fast robots used to calculate AvgFastOpTime **/
     public static double getFASTRATE() {
         return FASTRATE;
     }
@@ -44,6 +51,13 @@ public class FastRobot extends Robot {
         FastRobot.totalFastOpTime ++;
     }
 
+    /**
+     * Overriding add to robot method to add mailitems to the hand or tube for given FastRobot
+     * @param mailItem is the item intending to be added to robot
+     * @param robot is the chosen robot for this case
+     * @exception ItemTooHeavyException is an exception thrown in the case of the item being heavier than 2000
+     * @exception  DoesNotHaveSpaceException is an exception thrown in the case that the robot is full of items
+     * **/
     @Override
     public void addToRobot(MailItem mailItem, Robot robot) throws ItemTooHeavyException, DoesNotHaveSpaceException {
         if(robot.deliveryItem==null){

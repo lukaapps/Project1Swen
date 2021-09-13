@@ -14,7 +14,11 @@ public class Automail {
     	this.mailPool = mailPool;
         int totalRobots = numBulkRobots + numRegRobots + numFastRobots;
         int i, j, k;
-    	/** Initialize robots, currently only regular robots */
+    	/** Initialize robots, currently only regular robots
+         * Using numRegRobots to initialise all normal robots
+         * Using numRegRobots + numFastRobots to initialise the fast robots in the list robots
+         * from numRegRobots to numFastRobots
+         * finally initialising total bulk robots from j to TotalRobots**/
     	robots = new Robot[totalRobots];
     	for (i = 0; i < numRegRobots; i++) robots[i] = new NormalRobot(delivery, mailPool, i);
     	NormalRobot.setNumNormalRobots(numRegRobots);

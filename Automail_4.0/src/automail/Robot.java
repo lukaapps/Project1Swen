@@ -38,6 +38,7 @@ public abstract class Robot {
      * also set it to be waiting for mail.
      * @param delivery governs the final delivery
      * @param mailPool is the source of mail items
+     * @param number is used to create the id for a robot
      * @param type is the type of robot that is being used
      */
     public Robot(IMailDelivery delivery, MailPool mailPool, int number, String type){
@@ -50,18 +51,20 @@ public abstract class Robot {
         this.mailPool = mailPool;
         this.receivedDispatch = false;
         this.deliveryCounter = 0;
-        //changeState(RobotState.WAITING);
 
     }
 
     /**
-     * This is called when a robot is assigned the mail items and ready to dispatch for the delivery 
-     */
+     * dispatch is called to create a charge object in robot class
+     * @param charge - use to set the charge object in robot**/
     public void dispatch(Charge charge) {
         this.chargeObject = charge;
     	receivedDispatch = true;
     }
 
+    /**
+     * Convert is a simple method used to convert the type into a value for future use in operate
+     * @param strength - value for type**/
     public int convert(String strength){
         if(strength.equals("F")){
             return 1;
@@ -239,7 +242,10 @@ public abstract class Robot {
 		return (deliveryItem == null && tube.size() == 0);
 	}
 
-
+    /**
+     * abstract class addToRobot to be overridden in subclasses
+     * @param mailItem - the item being added to robot
+     * @param robot  - the robot the item is being added to **/
     public abstract void addToRobot(MailItem mailItem, Robot robot) throws ItemTooHeavyException, DoesNotHaveSpaceException;
 
 }
