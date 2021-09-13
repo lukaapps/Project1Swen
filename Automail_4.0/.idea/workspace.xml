@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c1928f6c-fc32-4bcd-a9b1-e24a0659b675" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automail.properties" beforeDir="false" afterPath="$PROJECT_DIR$/automail.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/automail/Charge.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/Charge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/automail/MailPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/automail/MailPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/Automail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Automail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/BulkRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/BulkRobot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automail/Charge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Charge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/FastRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/FastRobot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/MailPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/MailPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/NormalRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/NormalRobot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automail/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automail/Robot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +98,7 @@
       <workItem from="1631087170761" duration="9050000" />
       <workItem from="1631237871118" duration="4449000" />
       <workItem from="1631433050489" duration="5379000" />
+      <workItem from="1631494332306" duration="3969000" />
     </task>
     <servers />
   </component>
@@ -111,6 +116,24 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1440" height="270" key="GridCell.Tab.0.bottom" timestamp="1631498421433">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="270" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1631498421433" />
+    <state width="1440" height="270" key="GridCell.Tab.0.center" timestamp="1631498421431">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="270" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1631498421431" />
+    <state width="1440" height="270" key="GridCell.Tab.0.left" timestamp="1631498421431">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="270" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1631498421431" />
+    <state width="1440" height="270" key="GridCell.Tab.0.right" timestamp="1631498421432">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1440" height="270" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1631498421432" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

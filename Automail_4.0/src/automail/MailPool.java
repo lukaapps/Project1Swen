@@ -55,7 +55,11 @@ public class MailPool {
 		while (i.hasNext()) loadItem(i);
 	}
 	
-	//load items to the robot
+	/**
+	 * Used to call on the addToRobot function in subclasses
+	 * @param i  - is the list of robots and used to add to each individual robot
+	 * A loop is run on each robot dependent on type and tube size
+	 * in this loop the items are added to each robot - the loops size are specified by the type of robot**/
 	private void loadItem(ListIterator<Robot> i) throws ItemTooHeavyException, DoesNotHaveSpaceException {
 
 		Robot robot = i.next();

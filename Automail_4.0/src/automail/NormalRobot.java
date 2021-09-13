@@ -16,6 +16,13 @@ public class NormalRobot extends Robot {
         super(delivery, mailPool, number, "R");
     }
 
+    /**
+     * Getters and setters for
+     * NormalRate - The rate at which the robot is being charged
+     * NumNormalRobots - the number of normal robots in the pool
+     * AvgNormalOpTime - the avg operating time for normal robots
+     * TotalNomralOpTime - the total operating time for all normal robots used to calculate AvgNormalOpTime **/
+
     public static double getNORMALRATE() {
         return NORMALRATE;
     }
@@ -44,6 +51,13 @@ public class NormalRobot extends Robot {
         NormalRobot.totalNormalOpTime ++;
     }
 
+    /**
+     * Overriding add to robot method to add mailitems to the hand or tube for given NormalRobot
+     * @param mailItem is the item intending to be added to robot
+     * @param robot is the chosen robot for this case
+     * @exception ItemTooHeavyException is an exception thrown in the case of the item being heavier than 2000
+     * @exception  DoesNotHaveSpaceException is an exception thrown in the case that the robot is full of items
+     * **/
     @Override
     public void addToRobot(MailItem mailItem, Robot robot) throws ItemTooHeavyException, DoesNotHaveSpaceException {
         if (deliveryItem == null) {
